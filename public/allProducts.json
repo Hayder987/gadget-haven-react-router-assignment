@@ -1,0 +1,190 @@
+[
+    {
+      "product_id": 1,
+      "product_title": "Samsung Galaxy S21",
+      "product_image": "https://i.ibb.co.com/R0wwTc6/Samsung-Galaxy-S21.webp",
+      "category": "Phones",
+      "price": 799,
+      "description": "High performance Android phone with stunning display.",
+      "specification": [
+        "Exynos 2100",
+        "128GB storage",
+        "6.2-inch display",
+        "Triple-camera system"
+      ],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": 2,
+      "product_title": "Dell XPS 13",
+      "product_image": "https://i.ibb.co.com/6bPfy7J/Dell-XPS-13-Plus-1.webp",
+      "category": "Laptops",
+      "price": 1200,
+      "description": "Compact and high-performing ultrabook.",
+      "specification": [
+        "Intel Core i7",
+        "16GB RAM",
+        "1TB SSD",
+        "13.3-inch display"
+      ],
+      "availability": false,
+      "rating": 4.9
+    },
+    {
+      "product_id": 3,
+      "product_title": "Acer Aspire 5",
+      "product_image": "https://i.ibb.co.com/k2BtLZP/Acer-Aspire-5.webp",
+      "category": "Laptops",
+      "price": 600,
+      "description": "A powerful laptop with excellent battery life and performance.",
+      "specification": [
+        "Intel Core i5",
+        "8GB RAM",
+        "256GB SSD",
+        "15.6-inch display"
+      ],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": 4,
+      "product_title": "iPhone 13",
+      "product_image": "https://i.ibb.co.com/vmz8WyH/i-Phone-13.jpg",
+      "category": "Phones",
+      "price": 999,
+      "description": "Apple's latest model with powerful performance.",
+      "specification": [
+        "A15 Bionic Chip",
+        "128GB storage",
+        "6.1-inch display",
+        "Dual-camera system"
+      ],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": 5,
+      "product_title": "Samsung Galaxy Watch 4",
+      "product_image": "https://i.ibb.co.com/9V9fQ0n/Samsung-Galaxy-Watch-4.jpg",
+      "category": "Smart Watches",
+      "price": 300,
+      "description": "Android smartwatch with health and fitness tracking.",
+      "specification": [
+        "Blood oxygen tracking",
+        "GPS",
+        "Customizable watch faces"
+      ],
+      "availability": false,
+      "rating": 4.6
+    },
+    {
+      "product_id": 6,
+      "product_title": "Anker Wireless Charger",
+      "product_image": "https://i.ibb.co.com/m0mbKZr/Anker-Wireless-Charger.jpg",
+      "category": "Accessories",
+      "price": 60,
+      "description": "Fast wireless charging for compatible devices.",
+      "specification": [
+        "10W fast charging",
+        "Compatible with Qi-enabled devices"
+      ],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": 7,
+      "product_title": "Apple AirPods Pro",
+      "product_image": "https://i.ibb.co.com/svVH9rV/arir-Pods-pro.png",
+      "category": "Accessories",
+      "price": 250,
+      "description": "Active noise cancellation and high-quality audio.",
+      "specification": [
+        "Active noise cancellation",
+        "Transparency mode",
+        "Sweat and water resistant"
+      ],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": 8,
+      "product_title": "MacBook Pro",
+      "product_image": "https://i.ibb.co.com/nsJ6VWw/Mac-Book-Pro.jpg",
+      "category": "Laptops",
+      "price": 1500,
+      "description": "Apple's powerful laptop with the M1 chip.",
+      "specification": [
+        "Apple M1 Chip",
+        "16GB RAM",
+        "512GB SSD",
+        "13-inch Retina display"
+      ],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": 9,
+      "product_title": "Apple Watch Series 7",
+      "product_image": "https://i.ibb.co.com/mFTCsCD/Apple-Watch-Series-7.jpg",
+      "category": "Smart Watches",
+      "price": 400,
+      "description": "Apple's latest smartwatch with advanced health features.",
+      "specification": [
+        "ECG and blood oxygen sensor",
+        "GPS",
+        "Always-on Retina display"
+      ],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": 10,
+      "product_title": "Microsoft Surface Laptop 4",
+      "product_image": "https://i.ibb.co.com/JKQrGnQ/Microsoft-Surface-Laptop-4.webp",
+      "category": "Laptops",
+      "price": 1000,
+      "description": "Sleek and stylish with a powerful AMD Ryzen processor.",
+      "specification": [
+        "AMD Ryzen 5",
+        "8GB RAM",
+        "256GB SSD",
+        "13.5-inch display"
+      ],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": 11,
+      "product_title": "HP Pavilion 14",
+      "product_image": "https://i.ibb.co.com/NtbGLVX/HP-Pavilion-14.webp",
+      "category": "Laptops",
+      "price": 750,
+      "description": "Stylish design with solid performance for everyday tasks.",
+      "specification": [
+        "Intel Core i7",
+        "16GB RAM",
+        "512GB SSD",
+        "14-inch display"
+      ],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": 12,
+      "product_title": "Lenovo ThinkPad X1",
+      "product_image": "https://i.ibb.co.com/CWnT8Hy/Lenovo-Think-Pad-X1.webp",
+      "category": "Laptops",
+      "price": 1350,
+      "description": "Durable and reliable with excellent keyboard.",
+      "specification": [
+        "Intel Core i7",
+        "16GB RAM",
+        "1TB SSD",
+        "14-inch display"
+      ],
+      "availability": false,
+      "rating": 4.6
+    }
+  ]
+  
