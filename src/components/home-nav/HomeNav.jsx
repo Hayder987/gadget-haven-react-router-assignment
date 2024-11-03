@@ -17,7 +17,7 @@ const HomeNav = () => {
          <div className="navbar ">
            <div className="navbar-start">
              <div className="dropdown">
-               <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+               <div tabIndex={0} role="button" className="btn text-white btn-ghost lg:hidden">
                  <svg
                    xmlns="http://www.w3.org/2000/svg"
                    className="h-5 w-5"
@@ -33,7 +33,7 @@ const HomeNav = () => {
                </div>
                <ul
                  tabIndex={0}
-                 className="menu menu-sm text-white font-medium  flex flex-col gap-4 dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                 className="menu menu-sm  font-medium  flex flex-col gap-4 dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                  {
                   navList
                  }
@@ -51,10 +51,10 @@ const HomeNav = () => {
            <div className="navbar-end">
              <div className="flex gap-3 ">
                <div className="bg-white flex justify-center items-center p-3 rounded-full">
-                <p className="text-xl"><AiOutlineShoppingCart /></p>
+                <button className="text-xl"><AiOutlineShoppingCart /></button>
                </div>
                <div className="bg-white flex justify-center items-center p-3 rounded-full">
-                <p className="text-xl"><FaRegHeart /></p>
+                <button className="text-xl"><FaRegHeart /></button>
                </div>
              </div>
            </div>
