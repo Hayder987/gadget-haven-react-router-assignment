@@ -13,11 +13,13 @@ const Root = () => {
 
     return (
         <LocationContext.Provider value={pathname}>
-           <div className="">
+           <div className="bg-bodyBg md:p-3">
              {
                 pathname ==='/' ? <HomeNav></HomeNav> : <NavBar></NavBar>
              }
-            <Outlet></Outlet>
+            <div className="min-h-[calc(100vh-450px)]">
+              <Outlet></Outlet>
+            </div>
             <Footer></Footer>
            </div>
         </LocationContext.Provider>

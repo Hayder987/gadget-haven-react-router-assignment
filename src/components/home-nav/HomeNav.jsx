@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaRegHeart } from "react-icons/fa";
 import Banner from "./Banner";
+import FloatBanner from "../FloatBanner/FloatBanner";
 
 
 
@@ -13,7 +14,8 @@ const HomeNav = () => {
     <NavLink to="/dashboard"><li>Dashboard</li></NavLink>
   </>
   return (
-      <div className="px-4 md:px-16 lg:px-24 p-4 bg-primaryColor">
+      <div className="border-2 p-1 rounded-3xl relative">
+        <div className="px-4 min-h-[75vh] lg:min-h-[90vh] md:px-16 lg:px-24 p-4 rounded-3xl bg-primaryColor ">
          <div className="navbar ">
            <div className="navbar-start">
              <div className="dropdown">
@@ -59,7 +61,9 @@ const HomeNav = () => {
              </div>
            </div>
          </div>
-         <Banner></Banner>
+         <Banner></Banner>        
+      </div>
+      <FloatBanner></FloatBanner>
       </div>
   );
 };

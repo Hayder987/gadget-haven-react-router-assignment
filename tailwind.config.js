@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primaryColor: "rgb(149, 56, 226)"
+        primaryColor: "rgb(149, 56, 226)",
+        bodyBg: "rgb(247, 247, 247)"
       }
     },
   },

@@ -10,7 +10,7 @@ const NavBar = () => {
       <NavLink to="/dashboard"><li>Dashboard</li></NavLink>
     </>
     return (
-        <div className="px-4 md:px-16 lg:px-24 p-4 ">
+        <div className="px-4 md:px-16 lg:px-24 p-6 ">
            <div className="navbar ">
              <div className="navbar-start">
                <div className="dropdown">
