@@ -7,3 +7,8 @@
 body{
     font-family: "Sora", sans-serif;
 }
+
+ul .active{
+    color: rgb(247, 84, 84);
+    text-decoration: underline;
+}
