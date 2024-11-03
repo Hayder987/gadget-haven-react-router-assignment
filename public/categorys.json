@@ -1,28 +1,34 @@
 [
+   {
+     "id": 1,
+     "category": "All",
+     "slug": "All-Data"
+   },
     {
-      "id": 1,
+      "id": 2,
       "category": "Laptops",
       "slug": "acer-aspire-5"
     },
     {
-      "id": 2,
+      "id": 3,
       "category": "Phones",
       "slug": "iphone-13"
     },
     {
-      "id": 3,
+      "id": 4,
       "category": "Accessories",
       "slug": "anker-wireless-charger"
     },
     {
-      "id": 4,
+      "id": 5,
       "category": "Smart Watches",
       "slug": "apple-watch-series-7"
     },
     {
-      "id": 5,
+      "id": 6,
       "category": "MacBook",
       "slug": "macbook-pro"
     }
+    
   ]
   

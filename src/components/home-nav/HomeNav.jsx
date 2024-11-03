@@ -15,7 +15,7 @@ const HomeNav = () => {
   </>
   return (
       <div className="border-2 p-1 rounded-3xl relative">
-        <div className="px-4 min-h-[75vh] lg:min-h-[90vh] md:px-16 lg:px-24 p-4 rounded-3xl bg-primaryColor ">
+        <div className="px-4  md:px-16 lg:px-24 p-4 min-h-[75vh] lg:min-h-[90vh] rounded-3xl bg-primaryColor ">
          <div className="navbar ">
            <div className="navbar-start">
              <div className="dropdown">
