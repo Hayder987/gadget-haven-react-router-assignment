@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const HeroTitle = ({title, description}) => {
     const pathname = useContext(LocationContext) 
     return (
-        <div className={`px-2 ${pathname==="/" ? "" : "bg-primaryColor"} py-6 lg:px-60 mt-12`}>
+        <div className={`px-2 min-h-[40vh] ${pathname==="/" ? "" : "bg-primaryColor"} py-6 lg:px-60 mt-12`}>
            <h1 className={`text-center font-bold text-white mb-6 
             ${pathname==="/" ? "md:text-5xl text-3xl": "text-3xl"}`}>
             {title}
