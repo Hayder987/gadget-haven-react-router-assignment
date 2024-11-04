@@ -9,6 +9,7 @@ import Statistics from "../pages/Statistics";
 import ErrorPage from "../pages/ErrorPage";
 import Details from "../pages/Details";
 
+
 const router = createBrowserRouter([
     {
       path: "/",

@@ -1,9 +1,14 @@
 import { NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaRegHeart } from "react-icons/fa";
-
+import { useContext } from "react";
+import { CartItemContext, WishItemContext } from "../routes/Root";
+ 
 
 const NavBar = () => {
+  const [cartValue, setCartValue] = useContext(CartItemContext)
+  const [wishValue, setWishValue] = useContext(WishItemContext)
+  
     const navList = <>
       <NavLink to="/"><li>Home</li></NavLink>
       <NavLink to="/statistic"><li>Statistics</li></NavLink>
@@ -47,11 +52,15 @@ const NavBar = () => {
              </div>
              <div className="navbar-end">
                <div className="flex gap-3 ">
-                 <div className="border-2 flex justify-center items-center p-3 rounded-full">
+                 <div className="border-2 relative flex justify-center items-center p-3 rounded-full">
                   <p className="text-xl"><AiOutlineShoppingCart /></p>
+                  <p className="absolute text-red-600 font-semibold 
+                  -top-4 right-0">{cartValue.length}</p>
                  </div>
-                 <div className="border-2 flex justify-center items-center p-3 rounded-full">
+                 <div className="border-2 relative flex justify-center items-center p-3 rounded-full">
                   <p className="text-xl"><FaRegHeart /></p>
+                  <p className="absolute text-red-600 font-semibold 
+                  -top-4 right-0">{wishValue.length}</p>
                  </div>
                </div>
              </div>

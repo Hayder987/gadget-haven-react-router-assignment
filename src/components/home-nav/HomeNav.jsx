@@ -4,10 +4,14 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaRegHeart } from "react-icons/fa";
 import Banner from "./Banner";
 import FloatBanner from "../FloatBanner/FloatBanner";
+import { useContext } from "react";
+import { CartItemContext, WishItemContext } from "../../routes/Root";
 
 
 
 const HomeNav = () => {
+  const [cartValue, setCartValue] = useContext(CartItemContext)
+  const [wishValue, setWishValue] = useContext(WishItemContext)
     const navList = <>
     <NavLink to="/"><li>Home</li></NavLink>
     <NavLink to="/statistic"><li>Statistics</li></NavLink>
@@ -52,11 +56,15 @@ const HomeNav = () => {
            </div>
            <div className="navbar-end">
              <div className="flex gap-3 ">
-               <div className="bg-white flex justify-center items-center p-3 rounded-full">
+               <div className="bg-white relative flex justify-center items-center p-3 rounded-full">
                 <button className="text-xl"><AiOutlineShoppingCart /></button>
+                <p className="absolute text-red-200 font-semibold 
+                -top-4 right-0">{cartValue.length}</p>
                </div>
-               <div className="bg-white flex justify-center items-center p-3 rounded-full">
+               <div className="bg-white relative flex justify-center items-center p-3 rounded-full">
                 <button className="text-xl"><FaRegHeart /></button>
+                <p className="absolute text-red-200 font-semibold 
+                -top-4 right-0">{wishValue.length}</p>
                </div>
              </div>
            </div>

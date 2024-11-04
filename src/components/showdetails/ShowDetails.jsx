@@ -3,7 +3,7 @@ import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
-import { setCartItem } from "../../utilities/utilites";
+import { setCartItem, setWishItem } from "../../utilities/utilites";
 
 
      const ShowDetails = ({data}) => {
@@ -13,7 +13,11 @@ import { setCartItem } from "../../utilities/utilites";
      
     const cartBtnHandeller=(id)=>{
          setCartItem(id)
-    }      
+    }  
+    
+    const wishBtnHandeller=(id)=>{
+        setWishItem(id)
+   }
 
     return (
         <div className="bg-gray-100 rounded-xl p-4 flex flex-col md:flex-row gap-12
@@ -64,7 +68,7 @@ import { setCartItem } from "../../utilities/utilites";
                         <span className="">Add To Card</span>
                         <span className="text-xl"><MdOutlineShoppingCart /></span>
                     </button>
-                    <button className="p-3 rounded-full border-2">
+                    <button onClick={()=> wishBtnHandeller(product_id)} className="p-3 rounded-full border-2">
                     <FaRegHeart />
                     </button>
                 </div>

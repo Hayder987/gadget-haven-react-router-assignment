@@ -1,9 +1,7 @@
 import PropTypes from "prop-types";
 import { MdDeleteForever } from "react-icons/md";
 
-
-
-const CartDetails = ({data, cartDeleteHandeller}) => {
+const WishDeatils = ({data, wishDeleteHandeller}) => {
     return (
         <div className="grid gap-4 grid-cols-1 px-4  p-4  md:px-16 lg:px-24 py-8">
             {
@@ -18,7 +16,7 @@ const CartDetails = ({data, cartDeleteHandeller}) => {
                          <p className="mb-3">{item.description}</p>
                          <h4 className="font-bold">Price: {item.price}$</h4>
                        </div>
-                       <div onClick={()=> cartDeleteHandeller(item.product_id)} className="absolute top-0 right-0 md:top-16 md:right-4 p-3 h-14 w-14 rounded-full border-2 flex justify-center items-center">
+                       <div onClick={()=>wishDeleteHandeller(item.product_id)} className="absolute top-0 right-0 md:top-16 md:right-4 p-3 h-14 w-14 rounded-full border-2 flex justify-center items-center">
                         <p className="text-4xl text-red-500"><MdDeleteForever /></p>
                        </div>
                       </div>
@@ -30,9 +28,9 @@ const CartDetails = ({data, cartDeleteHandeller}) => {
     );
 };
 
-CartDetails.propTypes ={
-    data:PropTypes.array.isRequired,
-    cartDeleteHandeller: PropTypes.func
+WishDeatils.propTypes ={
+    data:PropTypes.array.isRequired
 }
 
-export default CartDetails;
+
+export default WishDeatils;
