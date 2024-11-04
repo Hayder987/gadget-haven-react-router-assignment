@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import HeroTitle from "../ReusableComponents/HeroTitle";
 import ShowDetails from "../components/showdetails/ShowDetails";
+import { Helmet } from "react-helmet";
 
 
 const Details = () => {
@@ -19,6 +20,9 @@ const Details = () => {
 
     return (
         <div className="bg-bodyBg p-6 min-h-[130vh] md:min-h-[95vh] relative">
+            <Helmet>
+                <title>Home|Details|Gadget Haven</title>
+            </Helmet>
             <HeroTitle
             title={"Product Details"} 
             description={"Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"}

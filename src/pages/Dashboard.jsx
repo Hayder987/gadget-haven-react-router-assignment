@@ -5,6 +5,8 @@ import CartDetails from "../components/CartDetails/CartDetails";
 import { getCartItem, getWishItem, removeCart, removeItemCart, removeItemWish, removeWish } from "../utilities/utilites";
 import WishDeatils from "../components/CartDetails/WishDeatils";
 import { CartItemContext, WishItemContext } from "../routes/Root";
+import { Helmet } from "react-helmet";
+
 
 
 const Dashboard = () => {
@@ -85,6 +87,9 @@ const Dashboard = () => {
 
     return (
         <div className="min-h-[calc(100vh-420px)]">
+          <Helmet>
+            <title>dashboard|Gadget Haven</title>
+          </Helmet>
             <div className="bg-primaryColor py-6  ">
                <h1 className="text-center text-white text-3xl mb-4 font-semibold">Dashboard</h1>
                <p className="text-white/70 text-center ">Explore the latest gadgets that will take your experience to the next level. 
@@ -131,7 +136,7 @@ const Dashboard = () => {
                       </div>
                       <div className="modal-action w-full">
                         <form method="dialog" className="w-full flex justify-center items-center">
-                          <button onClick={closeBtnHandeler} className="btn ">Close</button>
+                          <button onClick={closeBtnHandeler} className="py-3 px-8 rounded-full bg-primaryColor text-white ">Close</button>
                         </form>
                       </div>
                     </div>

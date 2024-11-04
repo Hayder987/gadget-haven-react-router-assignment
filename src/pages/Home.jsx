@@ -1,8 +1,8 @@
 import { useLoaderData } from "react-router-dom";
 import Cards from "../components/cards/Cards";
 import SideBar from "../components/sidebar/SideBar";
-import { useEffect, useState } from "react";
-
+import {  useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 
 const Home = () => {
@@ -32,6 +32,9 @@ const Home = () => {
 
     return (
         <div className="mt-[250px] lg:mt-[390px]">
+          <Helmet>
+            <title>Home | Gadget Heaven</title>
+          </Helmet>
            <div className="mb-12">
             <h1 className="text-center font-bold text-4xl ">Explore Cutting-Edge Gadgets</h1>
            </div>

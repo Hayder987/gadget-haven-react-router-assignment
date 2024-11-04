@@ -1,9 +1,14 @@
 import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
 import { MdDeleteForever } from "react-icons/md";
+
 
 const WishDeatils = ({data, wishDeleteHandeller}) => {
     return (
         <div className="grid gap-4 grid-cols-1 px-4  p-4  md:px-16 lg:px-24 py-8">
+          <Helmet>
+            <title>dashbord|wish| Gadget Haven</title>
+          </Helmet>
             {
                 data.map(item=> (
                     <div key={item.product_id} className="relative flex gap-10 border-2 rounded-xl p-3">
