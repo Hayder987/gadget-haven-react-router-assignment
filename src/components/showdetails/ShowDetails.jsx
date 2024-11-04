@@ -3,14 +3,17 @@ import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
+import { setCartItem } from "../../utilities/utilites";
 
 
-const ShowDetails = ({data}) => {
-    const{product_title, product_image, price, description,
-        specification, availability, rating
-         } = data || {};
-
-        
+     const ShowDetails = ({data}) => {
+         const{product_title, product_image, price, description,
+             specification, availability, rating,product_id
+              } = data || {};
+     
+    const cartBtnHandeller=(id)=>{
+         setCartItem(id)
+    }      
 
     return (
         <div className="bg-gray-100 rounded-xl p-4 flex flex-col md:flex-row gap-12
@@ -57,7 +60,7 @@ const ShowDetails = ({data}) => {
                     <button className="py-2 px-3 rounded-full bg-gray-200">{rating}</button>
                 </div>
                 <div className="flex gap-6">
-                    <button className="bg-primaryColor flex text-white font-semibold justify-center items-center gap-4 py-2 px-4 rounded-full">
+                    <button onClick={()=> cartBtnHandeller(product_id)} className="bg-primaryColor flex text-white font-semibold justify-center items-center gap-4 py-2 px-4 rounded-full">
                         <span className="">Add To Card</span>
                         <span className="text-xl"><MdOutlineShoppingCart /></span>
                     </button>
