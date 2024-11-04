@@ -3,20 +3,29 @@ import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
-import { setCartItem, setWishItem } from "../../utilities/utilites";
+import { getCartItem, getWishItem, setCartItem, setWishItem } from "../../utilities/utilites";
+import { useContext } from "react";
+import { CartItemContext, WishItemContext } from "../../routes/Root";
 
 
      const ShowDetails = ({data}) => {
+        const [cartValue, setCartValue] = useContext(CartItemContext)
+        const [wishValue, setWishValue] = useContext(WishItemContext)
          const{product_title, product_image, price, description,
              specification, availability, rating,product_id
               } = data || {};
+              
      
     const cartBtnHandeller=(id)=>{
          setCartItem(id)
+         const cartDataLS = getCartItem()
+         setCartValue(cartDataLS)
     }  
     
     const wishBtnHandeller=(id)=>{
         setWishItem(id)
+        const wishDataLs = getWishItem()
+        setWishValue(wishDataLs);
    }
 
     return (
