@@ -30,8 +30,6 @@ const Home = () => {
           setCat(selectedCat)  
     }
 
-    console.log(catData)
-
     return (
         <div className="mt-[250px] lg:mt-[390px]">
            <div className="mb-12">

@@ -7,6 +7,7 @@ import Home from "../pages/Home";
 import Dashboard from "../pages/Dashboard";
 import Statistics from "../pages/Statistics";
 import ErrorPage from "../pages/ErrorPage";
+import Details from "../pages/Details";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
         {
             path:"/statistic",
             element:<Statistics></Statistics>
+        },
+        {
+          path:"/post/:id",
+          loader: ()=> fetch("../allProducts.json"),
+          element:<Details></Details>
         }
       ]
     }
