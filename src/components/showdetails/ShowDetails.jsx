@@ -41,12 +41,7 @@ import { CartItemContext, WishItemContext } from "../../routes/Root";
         
    }
 
-   const HeartBtnController=()=>{
-       
-       
-   }
-
-
+   
     return (
         <div className="bg-gray-100 rounded-xl p-4 flex flex-col md:flex-row gap-12
         absolute z-10 top-1/2 left-1/2 transform -translate-y-[30vh] 
@@ -98,7 +93,7 @@ import { CartItemContext, WishItemContext } from "../../routes/Root";
                     </button>
                     <button 
                     disabled={isDisabled}
-                    onClick={()=> {wishBtnHandeller(product_id),HeartBtnController(product_id)}} className="p-3 rounded-full border-2">
+                    onClick={()=> wishBtnHandeller(product_id)} className="p-3 rounded-full border-2">
                     <FaRegHeart />
                     </button>
                 </div>

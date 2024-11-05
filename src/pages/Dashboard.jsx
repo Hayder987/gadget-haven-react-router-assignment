@@ -13,7 +13,9 @@ const Dashboard = () => {
     const allData = useLoaderData()
     const [data, setData] = useState([])
     const [cartTypes, setCartTypes] = useState("cart");
+    // eslint-disable-next-line no-unused-vars
     const [cartValue, setCartValue] = useContext(CartItemContext)
+    // eslint-disable-next-line no-unused-vars
     const [wishValue, setWishValue] = useContext(WishItemContext)
     const [total, setTotal] = useState(0);
     
@@ -102,10 +104,12 @@ const Dashboard = () => {
             <div className="flex justify-between items-center px-4  md:px-16 lg:px-24 py-8">
                 <h1 className="text-2xl font-bold hidden md:flex">Cart</h1>
                 <div className="flex gap-6 justify-center items-center">
-                    <h1 className="text-base md:text-2xl font-bold">
-                        <span className="">Total cost: </span>
-                        <span className="">{total}</span>
-                    </h1>
+                    {
+                      cartTypes==="cart"? <h1 className="text-base md:text-2xl font-bold">
+                      <span className="">Total cost: </span>
+                      <span className="">{total}$</span>
+                  </h1>: ""
+                    }
                     <button onClick={shortHandler} className="flex gap-3 justify-center items-center
                     border border-primaryColor py-2 px-4 rounded-full font-bold text-primaryColor
                     duration-300 hover:bg-primaryColor hover:text-white ">

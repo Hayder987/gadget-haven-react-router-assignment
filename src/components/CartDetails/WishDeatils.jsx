@@ -34,7 +34,8 @@ const WishDeatils = ({data, wishDeleteHandeller}) => {
 };
 
 WishDeatils.propTypes ={
-    data:PropTypes.array.isRequired
+    data:PropTypes.array.isRequired,
+    wishDeleteHandeller: PropTypes.func
 }
 
 
