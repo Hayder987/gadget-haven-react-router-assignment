@@ -102,7 +102,7 @@ const Dashboard = () => {
                </div>
             </div>
             <div className="flex justify-between items-center px-4  md:px-16 lg:px-24 py-8">
-                <h1 className="text-2xl font-bold hidden md:flex">Cart</h1>
+                <h1 className="text-2xl font-bold hidden md:flex">{cartTypes}</h1>
                 <div className="flex gap-6 justify-center items-center">
                     {
                       cartTypes==="cart"? <h1 className="text-base md:text-2xl font-bold">
