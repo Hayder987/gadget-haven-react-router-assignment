@@ -16,6 +16,7 @@ const HomeNav = () => {
     <NavLink to="/"><li>Home</li></NavLink>
     <NavLink to="/statistic"><li>Statistics</li></NavLink>
     <NavLink to="/dashboard"><li>Dashboard</li></NavLink>
+    <NavLink to="/faqs"><li>FAQs</li></NavLink>
   </>
   return (
       <div className="border-2 p-1 rounded-3xl relative">

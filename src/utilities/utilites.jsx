@@ -34,7 +34,7 @@ const removeItemCart =(id)=>{
     const cartItems = getCartItem()
     const remaing = cartItems.filter(item=> item !== id) 
     saveCartItemLS(remaing)
-    toast.info("This Item Remove form Your List")
+    toast.info("This Item Remove form Your Cart List")
 }
 
 
@@ -66,7 +66,7 @@ const removeItemWish =(id)=>{
     const wishItems = getCartItem()
     const remaing = wishItems.filter(item=> item !== id) 
     saveWishItemLs(remaing)
-    toast.info("This Item Remove form Your List")
+    toast.info("This Item Remove form Your Wish-List")
 }
 
 const saveWishItemLs =(item)=>{

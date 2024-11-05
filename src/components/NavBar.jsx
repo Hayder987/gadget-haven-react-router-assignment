@@ -13,6 +13,7 @@ const NavBar = () => {
       <NavLink to="/"><li>Home</li></NavLink>
       <NavLink to="/statistic"><li>Statistics</li></NavLink>
       <NavLink to="/dashboard"><li>Dashboard</li></NavLink>
+      <NavLink to="/faqs"><li>FAQs</li></NavLink>
     </>
     return (
         <div className="px-4 md:px-16 lg:px-24 p-6 ">
