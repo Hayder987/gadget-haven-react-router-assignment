@@ -29,6 +29,7 @@ const router = createBrowserRouter([
         },
         {
             path:"/statistic",
+            loader:()=> fetch('../allProducts.json'),
             element:<Statistics></Statistics>
         },
         {

@@ -19,7 +19,8 @@ const WishDeatils = ({data, wishDeleteHandeller}) => {
                        <div className="py-3 md:py-12">
                          <h3 className="text-2xl font-bold mb-2">{item.product_title}</h3>
                          <p className="mb-3">{item.description}</p>
-                         <h4 className="font-bold">Price: {item.price}$</h4>
+                         <h4 className="font-bold mb-3">Price: {item.price}$</h4>
+                         <button className="py-2 px-6 rounded-full bg-primaryColor text-white">Add Cart</button>
                        </div>
                        <div onClick={()=>wishDeleteHandeller(item.product_id)} className="absolute top-0 right-0 md:top-16 md:right-4 p-3 h-14 w-14 rounded-full border-2 flex justify-center items-center">
                         <p className="text-4xl text-red-500"><MdDeleteForever /></p>

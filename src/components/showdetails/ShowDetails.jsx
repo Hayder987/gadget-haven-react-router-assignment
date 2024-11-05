@@ -29,14 +29,14 @@ import { CartItemContext, WishItemContext } from "../../routes/Root";
         const wish = getWishItem()
         const isIncludes = wish.find(item=> item === id)
         if(isIncludes){
-            setIsDisabled(true);
-            
+           setIsDisabled(false)
             return
         }
         else{
             setWishItem(id)
             const wishDataLs = getWishItem()
             setWishValue(wishDataLs);
+            setIsDisabled(true);
         }
         
    }
@@ -93,7 +93,7 @@ import { CartItemContext, WishItemContext } from "../../routes/Root";
                     </button>
                     <button 
                     disabled={isDisabled}
-                    onClick={()=> wishBtnHandeller(product_id)} className="p-3 rounded-full border-2">
+                    onClick={()=> wishBtnHandeller(product_id)} className={`p-3 ${isDisabled ? "bg-gray-300":"bg-white"} rounded-full border-2`}>
                     <FaRegHeart />
                     </button>
                 </div>

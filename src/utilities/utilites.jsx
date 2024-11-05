@@ -63,7 +63,7 @@ const setWishItem = (id)=>{
 }
 
 const removeItemWish =(id)=>{
-    const wishItems = getCartItem()
+    const wishItems = getWishItem()
     const remaing = wishItems.filter(item=> item !== id) 
     saveWishItemLs(remaing)
     toast.info("This Item Remove form Your Wish-List")
