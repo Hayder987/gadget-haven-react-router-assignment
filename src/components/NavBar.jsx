@@ -42,7 +42,10 @@ const NavBar = () => {
                    }
                  </ul>
                </div>
-               <h1 className=" text-xl font-bold">Gadget Heaven</h1>
+               <div className="flex justify-center items-center gap-4">
+                 <img src="https://i.ibb.co.com/bsgMcys/online-shop.webp" alt="" className="w-14 h-14 rounded-full" />
+                 <h1 className=" text-xl font-bold">Gadget Heaven</h1>
+               </div>
              </div>
              <div className="navbar-center hidden lg:flex">
                <ul className="menu menu-horizontal font-medium flex gap-10 px-1">

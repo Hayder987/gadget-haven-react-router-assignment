@@ -3,7 +3,7 @@ import Card from "./Card";
 
 const Cards = ({catData}) => {
     return (
-        <div className="mb-12 w-10/12">
+        <div className="mb-12 md:w-10/12">
             {
                 catData.length>0 ? <div className=" grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {

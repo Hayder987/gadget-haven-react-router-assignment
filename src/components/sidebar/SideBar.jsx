@@ -9,7 +9,7 @@ const SideBar = ({allCategories, displayCategory}) => {
            setId(id)
     }
     return (
-        <div className="w-2/12">
+        <div className="md:w-2/12">
           <div className=" py-12 flex flex-col gap-4  rounded-lg border bg-white p-6">
             {
               allCategories.map(item =>(

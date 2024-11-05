@@ -4,18 +4,21 @@ import '@smastrom/react-rating/style.css'
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
 import { getCartItem, getWishItem, setCartItem, setWishItem } from "../../utilities/utilites";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartItemContext, WishItemContext } from "../../routes/Root";
 
 
      const ShowDetails = ({data}) => {
+        // eslint-disable-next-line no-unused-vars
         const [cartValue, setCartValue] = useContext(CartItemContext)
+        // eslint-disable-next-line no-unused-vars
         const [wishValue, setWishValue] = useContext(WishItemContext)
          const{product_title, product_image, price, description,
              specification, availability, rating,product_id
               } = data || {};
               
-     
+    const [isDisabled, setIsDisabled] = useState(false);
+
     const cartBtnHandeller=(id)=>{
          setCartItem(id)
          const cartDataLS = getCartItem()
@@ -23,10 +26,26 @@ import { CartItemContext, WishItemContext } from "../../routes/Root";
     }  
     
     const wishBtnHandeller=(id)=>{
-        setWishItem(id)
-        const wishDataLs = getWishItem()
-        setWishValue(wishDataLs);
+        const wish = getWishItem()
+        const isIncludes = wish.find(item=> item === id)
+        if(isIncludes){
+            setIsDisabled(true);
+            
+            return
+        }
+        else{
+            setWishItem(id)
+            const wishDataLs = getWishItem()
+            setWishValue(wishDataLs);
+        }
+        
    }
+
+   const HeartBtnController=()=>{
+       
+       
+   }
+
 
     return (
         <div className="bg-gray-100 rounded-xl p-4 flex flex-col md:flex-row gap-12
@@ -77,7 +96,9 @@ import { CartItemContext, WishItemContext } from "../../routes/Root";
                         <span className="">Add To Card</span>
                         <span className="text-xl"><MdOutlineShoppingCart /></span>
                     </button>
-                    <button onClick={()=> wishBtnHandeller(product_id)} className="p-3 rounded-full border-2">
+                    <button 
+                    disabled={isDisabled}
+                    onClick={()=> {wishBtnHandeller(product_id),HeartBtnController(product_id)}} className="p-3 rounded-full border-2">
                     <FaRegHeart />
                     </button>
                 </div>
