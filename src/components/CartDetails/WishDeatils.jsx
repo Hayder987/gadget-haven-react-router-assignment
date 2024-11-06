@@ -3,14 +3,14 @@ import { Helmet } from "react-helmet";
 import { MdDeleteForever } from "react-icons/md";
 
 
-const WishDeatils = ({data, wishDeleteHandeller}) => {
+const WishDeatils = ({wishDataAll, wishDeleteHandeller}) => {
     return (
         <div className="grid gap-4 grid-cols-1 px-4  p-4  md:px-16 lg:px-24 py-8">
           <Helmet>
             <title>dashbord|wish| Gadget Haven</title>
           </Helmet>
             {
-                data.map(item=> (
+               wishDataAll.map(item=> (
                     <div key={item.product_id} className="relative flex gap-10 border-2 rounded-xl p-3">
                       <div className="w-full md:w-2/12">
                         <img src={item.product_image} alt="" className="w-full rounded-xl h-56" />
@@ -35,7 +35,7 @@ const WishDeatils = ({data, wishDeleteHandeller}) => {
 };
 
 WishDeatils.propTypes ={
-    data:PropTypes.array.isRequired,
+  wishDataAll:PropTypes.array.isRequired,
     wishDeleteHandeller: PropTypes.func
 }
 

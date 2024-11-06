@@ -33,7 +33,7 @@ const Statistics = () => {
            </Helmet>
            <div className="mb-16">
            <div className="bg-primaryColor py-6  ">
-               <h1 className="text-center text-white text-3xl mb-4 font-semibold">Dashboard</h1>
+               <h1 className="text-center text-white text-3xl mb-4 font-semibold">Statistic Chart</h1>
                <p className="text-white/70 text-center ">Explore the latest gadgets that will take your experience to the next level. 
                   From smart devices to the coolest accessories, we have it all!</p>
             </div>

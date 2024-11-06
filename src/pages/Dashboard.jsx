@@ -11,7 +11,8 @@ import { Helmet } from "react-helmet";
 
 const Dashboard = () => {
     const allData = useLoaderData()
-    const [data, setData] = useState([])
+    const [cartDataAll, setcartDataAll] = useState([])
+    const [wishDataAll, setwishDataAll] = useState([])
     const [cartTypes, setCartTypes] = useState("cart");
     // eslint-disable-next-line no-unused-vars
     const [cartValue, setCartValue] = useContext(CartItemContext)
@@ -22,16 +23,23 @@ const Dashboard = () => {
     useEffect(()=>{
         const cartId = getCartItem()
         const cartData = [...allData].filter(item=> cartId.includes(item.product_id))
-         setData( cartData)
+         setcartDataAll( cartData)
          const money = cartData.reduce((a, b) => a + b.price, 0);
          setTotal(money)
         
     },[allData])
+
+    useEffect(()=>{
+      const wishId = getWishItem()
+      const wishData = [...allData].filter(item=> wishId.includes(item.product_id))
+       setwishDataAll(wishData)
+      
+  },[allData])
     
     const cartBtnHandeller =()=>{
              const cartId = getCartItem()
             const cartData = [...allData].filter(item=> cartId.includes(item.product_id))
-            setData(cartData)
+            setcartDataAll(cartData)
             setCartTypes("cart")
             const money = cartData.reduce((a, b) => a + b.price, 0);
             setTotal(money)                
@@ -40,32 +48,32 @@ const Dashboard = () => {
     const wishBtnHandeller =()=>{
             const wishId = getWishItem()
             const wishData = [...allData].filter(item=> wishId.includes(item.product_id))
-            setData(wishData)  
+            setwishDataAll(wishData)  
             setCartTypes("wish")
           
     }
 
     const cartDeleteHandeller=(id)=>{
         removeItemCart(id)
-        const remaing = data.filter(item=> item.product_id !==id)
+        const remaing = cartDataAll.filter(item=> item.product_id !==id)
         const money = remaing.reduce((a, b) => a + b.price, 0);
         setTotal(money)
-        setData(remaing)
+        setcartDataAll(remaing)
         setCartValue(remaing)
         
     }
 
     const wishDeleteHandeller=(id)=>{
         removeItemWish(id)
-        const remaing = data.filter(item=> item.product_id !==id)
-        setData(remaing)
+        const remaing = wishDataAll.filter(item=> item.product_id !==id)
+        setwishDataAll(remaing)
         setWishValue(remaing)
 
     }
 
     const shortHandler = () => {
-        const sortedCartData = [...data].sort((a, b) => b.price - a.price);
-        setData(sortedCartData); 
+        const sortedCartData = [...cartDataAll].sort((a, b) => b.price - a.price);
+        setcartDataAll(sortedCartData); 
      };
 
      const purchaseBtnHandler=()=>{
@@ -78,7 +86,8 @@ const Dashboard = () => {
 
       const navigate = useNavigate()
      const closeBtnHandeler=()=>{
-        setData([]) 
+        setcartDataAll([])
+        setwishDataAll([]) 
         removeCart()
         removeWish()
         setCartValue([])
@@ -116,16 +125,23 @@ const Dashboard = () => {
                         <span className="">Sort by Price</span>
                         <span className=""><FaSortAmountUp /></span>
                     </button>
-                        <button
-                          onClick={() => {
-                            purchaseBtnHandler();
-                            document.getElementById('PriceModal').showModal();
-                          }}
-                          className="border bg-primaryColor text-white border-primaryColor py-2 px-4 rounded-full font-medium
-                                      hover:bg-white hover:text-primaryColor"
-                        >
-                          Purchase
-                        </button>
+                      {
+                        cartTypes === "cart" ? (
+                          <button
+                            disabled={total <= 0} 
+                            onClick={() => {
+                              purchaseBtnHandler();
+                              document.getElementById('PriceModal').showModal();
+                            }}
+                            className={`border ${total<=0?"bg-gray-300 text-white":"bg-primaryColor text-white"} border-primaryColor py-2 px-4 rounded-full font-medium
+                                       hover:bg-white hover:text-primaryColor`}
+                          >
+                            Purchase
+                          </button>
+                        ) : (
+                          ""
+                        )
+                      }
                 </div>
 
                 {/* Modal */}
@@ -149,11 +165,11 @@ const Dashboard = () => {
             </div>
             {
                 cartTypes==="cart" ?<CartDetails 
-                data={data}
+                cartDataAll={cartDataAll}
                 cartDeleteHandeller={cartDeleteHandeller}
                 ></CartDetails>: 
                 <WishDeatils 
-                data={data}
+                wishDataAll={wishDataAll}
                 wishDeleteHandeller={wishDeleteHandeller}
                 ></WishDeatils>
             }

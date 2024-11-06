@@ -4,14 +4,14 @@ import { MdDeleteForever } from "react-icons/md";
 
 
 
-const CartDetails = ({data, cartDeleteHandeller}) => {
+const CartDetails = ({cartDataAll, cartDeleteHandeller}) => {
     return (
         <div className="grid gap-4 grid-cols-1 px-4  p-4  md:px-16 lg:px-24 py-8">
           <Helmet>
             <title>dashboard|cart|Gadget Haven</title>
           </Helmet>
             {
-                data.map(item=> (
+                cartDataAll.map(item=> (
                     <div key={item.product_id} className="relative flex gap-10 border-2 rounded-xl p-3">
                       <div className="w-full md:w-2/12">
                         <img src={item.product_image} alt="" className="w-full rounded-xl h-56" />
@@ -35,7 +35,7 @@ const CartDetails = ({data, cartDeleteHandeller}) => {
 };
 
 CartDetails.propTypes ={
-    data:PropTypes.array.isRequired,
+  cartDataAll:PropTypes.array.isRequired,
     cartDeleteHandeller: PropTypes.func
 }
 
