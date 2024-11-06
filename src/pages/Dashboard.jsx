@@ -78,15 +78,8 @@ const Dashboard = () => {
         setwishDataAll(sortedWishData);
      };
 
-     const purchaseBtnHandler=()=>{
-        const cart = getCartItem()
-        const cartData = [...allData].filter(item=> cart.includes(item.product_id))
-        const money = cartData.reduce((a, b) => a + b.price, 0);
-        setTotal(money) 
-        
-     }
-
       const navigate = useNavigate()
+      
      const closeBtnHandeler=()=>{
         setcartDataAll([])
         setwishDataAll([]) 
@@ -150,10 +143,7 @@ const Dashboard = () => {
                         cartTypes === "cart" ? (
                           <button
                             disabled={total <= 0} 
-                            onClick={() => {
-                              purchaseBtnHandler();
-                              document.getElementById('PriceModal').showModal();
-                            }}
+                            onClick={() => document.getElementById('PriceModal').showModal()}
                             className={`border ${total<=0?"bg-gray-300 text-white":"bg-primaryColor text-white"} border-primaryColor py-2 px-4 rounded-full font-medium
                                        hover:bg-white hover:text-primaryColor`}
                           >
