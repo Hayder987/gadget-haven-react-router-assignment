@@ -2,10 +2,11 @@ import {  useLoaderData, useNavigate} from "react-router-dom";
 import { FaSortAmountUp } from "react-icons/fa";
 import { useContext, useEffect, useState } from "react";
 import CartDetails from "../components/CartDetails/CartDetails";
-import { getCartItem, getWishItem, removeCart, removeItemCart, removeItemWish, removeWish } from "../utilities/utilites";
+import { getCartItem, getWishItem, removeCart, removeItemCart, removeItemWish, removeWish, setCartItem } from "../utilities/utilites";
 import WishDeatils from "../components/CartDetails/WishDeatils";
 import { CartItemContext, WishItemContext } from "../routes/Root";
 import { Helmet } from "react-helmet";
+import { toast } from "react-toastify";
 
 
 
@@ -14,7 +15,6 @@ const Dashboard = () => {
     const [cartDataAll, setcartDataAll] = useState([])
     const [wishDataAll, setwishDataAll] = useState([])
     const [cartTypes, setCartTypes] = useState("cart");
-    // eslint-disable-next-line no-unused-vars
     const [cartValue, setCartValue] = useContext(CartItemContext)
     // eslint-disable-next-line no-unused-vars
     const [wishValue, setWishValue] = useContext(WishItemContext)
@@ -74,6 +74,8 @@ const Dashboard = () => {
     const shortHandler = () => {
         const sortedCartData = [...cartDataAll].sort((a, b) => b.price - a.price);
         setcartDataAll(sortedCartData); 
+        const sortedWishData = [...wishDataAll].sort((a, b) => b.price - a.price);
+        setwishDataAll(sortedWishData);
      };
 
      const purchaseBtnHandler=()=>{
@@ -94,6 +96,25 @@ const Dashboard = () => {
         setWishValue([])
         navigate("/")
      }
+
+    //  optional part
+
+    const wishAddToCart =(id)=>{
+        
+        const remingWishItem = wishDataAll.filter(item=>item.product_id !== id)
+        const addCart = wishDataAll.find(cart=> cart.product_id === id)
+        
+        if(cartDataAll.includes(addCart)){
+          toast.error("This Item Already Added Your Cart")
+          return
+        }
+        removeItemWish(id)
+        setCartItem(id)
+        setwishDataAll(remingWishItem)
+        setWishValue(remingWishItem)
+        setcartDataAll([...cartDataAll,addCart])
+        setCartValue([...cartValue,addCart])
+    }
     
 
     return (
@@ -171,6 +192,7 @@ const Dashboard = () => {
                 <WishDeatils 
                 wishDataAll={wishDataAll}
                 wishDeleteHandeller={wishDeleteHandeller}
+                wishAddToCart={wishAddToCart}
                 ></WishDeatils>
             }
         </div>
